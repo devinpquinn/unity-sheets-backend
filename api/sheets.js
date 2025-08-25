@@ -14,7 +14,7 @@ export default async function handler(req, res) {
     const sheets = google.sheets({ version: "v4", auth });
 
     const spreadsheetId = process.env.SHEET_ID;
-    const range = "Sheet1";
+    const range = "Sheet1!A:A";
     const values = [[req.body.name, req.body.score]];
 
     await sheets.spreadsheets.values.append({
